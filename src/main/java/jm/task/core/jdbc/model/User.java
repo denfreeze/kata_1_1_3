@@ -33,7 +33,7 @@ public class User {
         return id;
     }
 
-    public void setId(Long id) {
+    private void setId(Long id) {
         this.id = id;
     }
 
@@ -58,7 +58,11 @@ public class User {
     }
 
     public void setAge(Byte age) {
-        this.age = age;
+        if (age != null && age >= 0) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Age cannot be negative or null");
+        }
     }
 
     @Override

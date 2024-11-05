@@ -10,7 +10,7 @@ public class Util {
     private static final String password = "root";
     private static final String driver = "com.mysql.cj.jdbc.Driver";
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName(driver);
